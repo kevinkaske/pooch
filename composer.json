@@ -1,0 +1,25 @@
+{
+	"name": "kevinkaske/pooch",
+	"description": "A simple lightweight MVC PHP framework",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Kevin Kaske",
+			"email": "kevinkaske@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"kevinkaske/flash": "master",
+		"kevinkaske/PHP-MySQLi-Database-Class": "master"
+	},
+	"autoload": {
+		"files": [
+			"libs/assets.php",
+			"libs/Controller.php",
+			"libs/query_string.php",
+			"libs/router.php",
+			"libs/view.php"
+		]
+	}
+}
