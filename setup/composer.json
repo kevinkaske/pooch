@@ -1,5 +1,5 @@
 {
 	"require": {
-		"kevinkaske/pooch": "master"
+		"kevinkaske/pooch": "dev-master"
 	}
 }
