@@ -10,8 +10,8 @@
 	],
 	"require": {
 		"php": ">=5.3.0",
-		"kevinkaske/flash": "master",
-		"kevinkaske/PHP-MySQLi-Database-Class": "master"
+		"kevinkaske/flash": "dev-master",
+		"kevinkaske/PHP-MySQLi-Database-Class": "dev-master"
 	},
 	"autoload": {
 		"files": [
