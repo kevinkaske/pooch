@@ -1,4 +1,5 @@
 {
+	"minimum-stability": "dev",
 	"require": {
 		"kevinkaske/pooch": "dev-master"
 	}

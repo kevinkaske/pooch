@@ -15,6 +15,7 @@ Installation of pooch is through [composer](https://getcomposer.org). You simply
 contents:
 ```json
 {
+	"minimum-stability": "dev",
 	"require": {
 		"kevinkaske/pooch": "dev-master"
 	}
