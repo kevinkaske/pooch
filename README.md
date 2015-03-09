@@ -124,4 +124,4 @@ Create a blank text document at views/dogs/index.php with the following code:
 
 Now adding a new record to the database table will make it appear when you navigate to your application.
 
-This is just a quick overview of a few the inner workings of the Pooch framework. We are working on more detailed documentation.
+This is just a quick overview of a few of the inner workings of the Pooch framework. We are working on more detailed documentation.
