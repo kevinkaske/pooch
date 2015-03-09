@@ -1,0 +1,1 @@
+Put your DB migration files here. Pooch Uses Phinx for migrations. You can find more information on how to use phinx here: https://phinx.org
