@@ -10,7 +10,7 @@ print getPurpleColoredString("888        \"Y88P\"   \"Y88P\"   \"Y8888P 888  888
 print "\n";
 print getCyanColoredString("Building initial blank project...");
 
-recurse_copy(realpath(__DIR__ . '/base/'),realpath(__DIR__ . '/../../../'));
+recurse_copy(realpath(__DIR__ . '/base/'),realpath(__DIR__ . '/../../../../'));
 print getCyanColoredString(" Finished!\n\n");
 print getLightCyanColoredString("Welcome to the Dog Pound!!!\n");
 
