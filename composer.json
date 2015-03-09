@@ -10,7 +10,8 @@
 	],
 	"require": {
 		"php": ">=5.3.0",
-		"kevinkaske/flash": "dev-master"
+		"kevinkaske/flash": "dev-master",
+		"robmorgan/phinx": "*"
 	},
 	"autoload": {
 		"files": [
