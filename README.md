@@ -28,7 +28,7 @@ to your application dir.
 
 Then run `composer install`. Composer will then install the dependant libraries.
 
-Now we just need to setup the project. Run the following command `php vendor/kevinkaske/pooch/setup.php`. Congratulations... Your 
+Now we need to setup the project. Run the following command `php vendor/kevinkaske/pooch/setup.php`. Congratulations... Your 
 project is now ready to go. 
 
 Everything is ready to go except for the database connection library. Since MysqliDb is not avalible for install via composer, 
