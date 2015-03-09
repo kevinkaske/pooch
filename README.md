@@ -44,7 +44,7 @@ mkdir scooby
 cd scooby
 curl -O https://raw.githubusercontent.com/kevinkaske/pooch/master/setup/base/composer.json
 composer install
-php vendor/kevinkaske/pooch/setup/setup.php
+php vendor/kevinkaske/pooch/setup/new_application.php
 cd lib
 curl -O https://raw.githubusercontent.com/joshcam/PHP-MySQLi-Database-Class/master/MysqliDb.php
 ```
