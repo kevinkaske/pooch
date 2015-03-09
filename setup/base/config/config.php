@@ -31,7 +31,7 @@ $config = Array();
 //---------------------------------------------
 // Root
 //---------------------------------------------
-$config['root_controller'] = 'dashboard';
+$config['root_controller'] = 'welcome';
 $config['root_action'] = 'index';
 
 //---------------------------------------------
@@ -72,5 +72,5 @@ if($config['env'] == 'dev'){
 $config['db_host'] = 'localhost';
 $config['db_username'] = 'root';
 $config['db_password'] = '';
-$config['db_database'] = 'database';
+$config['db_database'] = 'database_name';
 ?>

@@ -8,7 +8,7 @@
 	<!-- App CSS -->
 	<?= cssTags();?>
 </head>
-<body id="body">
+<body>
 	<? renderView(); ?>
 </body>
 </html>
