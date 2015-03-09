@@ -8,16 +8,9 @@
 			"email": "kevinkaske@gmail.com"
 		}
 	],
-	"repositories": [
-		{
-			"type": "git",
-			"url": "https://github.com/kevinkaske/PHP-MySQLi-Database-Class"
-		}
-	],
 	"require": {
 		"php": ">=5.3.0",
-		"kevinkaske/flash": "dev-master",
-		"joshcam/PHP-MySQLi-Database-Class": "dev-master"
+		"kevinkaske/flash": "dev-master"
 	},
 	"autoload": {
 		"files": [
