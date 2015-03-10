@@ -92,7 +92,7 @@ Now let's run this migration and add the "dogs" table to the database. Run `php 
 this migration.
 
 ###Controllers and Views
-Ok. We have a place to store the dogs that are in the dog pound. How are we going to allow people to view, add, and update these dogs? 
+Ok... We have a place to store the dogs that are in the dog pound. How are we going to allow people to view, add, and update these dogs? 
 We need to create a dogs controller and views to go along with those views.
 
 Create a blank text document at controllers/dogs_controller.php. In this file put the following code:
@@ -123,5 +123,13 @@ Create a blank text document at views/dogs/index.php with the following code:
 ```
 
 Now adding a new record to the database table will make it appear when you navigate to your application.
+
+How does the application know what controller and view to call? The application takes apart the URL and uses the last 1 or 2 components 
+in the URL to determine the Controller and Action to call. Example: http://localhost/dogs/show would call the show function in the dogs 
+controller. If there is no action passed in via the URL, it defaults to index. Once the function has been called everything will be 
+displayed using the layout and view. The layout defaults to "application.php" (This can be changed in the action function). The view 
+defaults to /views/controller_name/action_name.php. Example: http://localhost/dogs/show would use the /views/dogs/show.php view file.
+
+RESTful routes are a good way to keep your application organized. Pooch, however, does not force your application to be RESTful. 
 
 This is just a quick overview of a few of the inner workings of the Pooch framework. We are working on more detailed documentation.
