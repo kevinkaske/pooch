@@ -31,10 +31,6 @@ Then run `composer install`. Composer will then install the dependant libraries.
 Now we need to setup the project. Run the following command `php vendor/kevinkaske/pooch/setup.php`. Congratulations... Your 
 project is now ready to go. 
 
-Everything is ready to go except for the database connection library. Since MysqliDb is not avalible for install via composer, 
-we will need to install it to the lib directory. Simply download 
-[this file](https://raw.githubusercontent.com/joshcam/PHP-MySQLi-Database-Class/master/MysqliDb.php) to the lib directory.
-
 Welcome to pooch! 
 
 ###Installation Example (OSX or Linux)
@@ -45,8 +41,6 @@ cd pound
 curl -O https://raw.githubusercontent.com/kevinkaske/pooch/master/setup/base/composer.json
 composer install
 php vendor/kevinkaske/pooch/setup/new_application.php
-cd lib
-curl -O https://raw.githubusercontent.com/joshcam/PHP-MySQLi-Database-Class/master/MysqliDb.php
 ```
 
 ##Getting Started
@@ -131,5 +125,6 @@ displayed using the layout and view. The layout defaults to "application.php" (T
 defaults to /views/controller_name/action_name.php. Example: http://localhost/dogs/show would use the /views/dogs/show.php view file.
 
 RESTful routes are a good way to keep your application organized. Pooch, however, does not force your application to be RESTful. 
+If there is a method other than RESTful that makes more sense... Use it.
 
 This is just a quick overview of a few of the inner workings of the Pooch framework. We are working on more detailed documentation.
