@@ -1,6 +1,6 @@
 # Pooch
-A simple lightweight PHP framework. I created Pooch while building [Where I Give](http://whereigiveapp.com/), an online domation 
-application for none profit organizations.
+A simple lightweight PHP framework. I created Pooch while building [Where I Give](http://whereigiveapp.com/), an application 
+to make it easy for none profit organizations to receive donations online.
 
 ##About
 Pooch is a simple, small (around 200 lines of code) PHP framework. Pooch is able to stay tiny by being built to use the amazing 
