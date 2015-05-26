@@ -1,5 +1,6 @@
 # Pooch
-A simple lightweight PHP framework
+A simple lightweight PHP framework. I created Pooch while building [Where I Give](http://whereigiveapp.com/), an online domation 
+application for none profit organizations.
 
 ##About
 Pooch is a simple, small (around 200 lines of code) PHP framework. Pooch is able to stay tiny by being built to use the amazing 
@@ -13,8 +14,8 @@ looking for.
 
 ##Installation
 ###Installation Process (Detailed Overview)
-Installation of pooch is through [composer](https://getcomposer.org). You simply need to create a directory and create a composer.json file with the following 
-contents:
+Installation of pooch is through [composer](https://getcomposer.org). You simply need to create a directory and create a composer.json 
+file with the following contents:
 ```json
 {
 	"minimum-stability": "dev",
@@ -128,3 +129,6 @@ RESTful routes are a good way to keep your application organized. Pooch, however
 If there is a method other than RESTful that makes more sense... Use it.
 
 This is just a quick overview of a few of the inner workings of the Pooch framework. We are working on more detailed documentation.
+
+##Thanks
+A Special thanks to [BrowserStack](http://browserstack.com/) for making it easy to test on multiple browsers.
