@@ -121,15 +121,26 @@ Create a blank text document at views/dogs/index.php with the following code:
 Now manually adding a new record (through a tool like Sequel Pro or MySQL Workbench) to the database table will make it appear 
 when you navigate to your application.
 
+###Routing
 How does the application know what controller and view to call? The application takes apart the URL and uses the last 1 or 2 components 
 in the URL to determine the Controller and Action to call. Example: http://localhost/dogs/show would call the show function in the dogs 
-controller. If there is no action passed in via the URL, it defaults to index. Once the function has been called everything will be 
-displayed using the layout and view. The layout defaults to "application.php" (This can be changed in the action function). The view 
-defaults to /views/controller_name/action_name.php. Example: http://localhost/dogs/show would use the /views/dogs/show.php view file.
+controller.
+
+Is this limiting? Yes. It does, however, make it very fast and easy to keep track of your routes. You will always know what controller 
+and action is being called.
+
+If there is no action passed in via the URL, it defaults to index. Example: http://localhost/dogs would call the index function in the 
+dogs controller.
+
+###Layout and Views
+Once the correct action/function has been called everything will be displayed using first the layout and then the view. The layout 
+defaults to "application.php" (This can be changed in the action function). The view defaults to 
+/views/controller_name/action_name.php. Example: http://localhost/dogs/show would use the /views/dogs/show.php view file.
 
 RESTful routes are a good way to keep your application organized. Pooch, however, does not force your application to be RESTful. 
-If there is a method other than RESTful that makes more sense... Use it.
+If you would like to call an action function display instead of show, go for it.
 
+###More to Come
 This is just a quick overview of a few of the inner workings of the Pooch framework. We are working on more detailed documentation.
 
 ##Thanks
