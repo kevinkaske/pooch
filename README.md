@@ -1,3 +1,5 @@
+Pooch Website: [PoochHQ.com](http://www.poochhq.com)
+
 # Pooch
 A simple lightweight PHP framework. I created Pooch while building [Where I Give](http://whereigiveapp.com/), an application 
 to make it easy for none profit organizations to receive donations online.
