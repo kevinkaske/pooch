@@ -1,4 +1,27 @@
 <?
+function getResponseType() {
+	$values = array();
+	foreach (preg_split('/\s*,\s*/', $_SERVER['HTTP_ACCEPT']) as $qvalue) {
+		@list($value, $q) = preg_split('/\s*;\s*q\s*=\s*/', $qvalue);
+		$q = (is_null($q) || !is_numeric($q)) ? 1.0 : floatval($q);
+		$values[(string)$q][] = $value;
+	}
+	krsort($values, SORT_NUMERIC);
+	$value = array_shift(array_slice($values, 0, 1));
+
+	switch ($value[0]) {
+		case 'text/html':
+			return 'html';
+			break;
+		case 'application/xml':
+			return 'xml';
+			break;
+		case 'application/json':
+			return 'json';
+			break;
+	}
+}
+
 function routeRequest(){
 	global $config, $application, $controller, $action, $query_string;
 	$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

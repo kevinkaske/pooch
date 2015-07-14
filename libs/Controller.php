@@ -13,6 +13,7 @@ Class Controller {
 	public $action;
 	public $query_string;
 	public $application_data;
+	public $response_type;
 	public $values;
 	private $redirecting = false;
 	
@@ -20,6 +21,9 @@ Class Controller {
 		global $config, $application_data, $query_string;
 		
 		$application_data = array();
+		
+		//Set the type of response
+		$this->response_type = getResponseType();
 		
 		//Get config options in case they need to be read in controller
 		$this->config = $config;
