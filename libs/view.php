@@ -1,8 +1,8 @@
 <?
 function renderLayout(){
-	global $controller, $action, $view_layout, $config, $application_data, $view_data, $query_string;
+	global $controller, $action, $view_layout, $config, $application_data, $view_data, $query_string, $response_type;
 	if($view_layout != null && $view_layout != 'none'){
-		if($controller->response_type == 'html'){
+		if($response_type == 'html'){
 			require(ROOT.'/views/layouts/'.$view_layout.'.php');
 		}else{
 			require(ROOT.'/views/layouts/'.$view_layout.'.'.$controller->response_type.'.php');
