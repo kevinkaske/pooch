@@ -3,6 +3,7 @@
 $view_data = null;
 $view_layout = null;
 $controller = null;
+$response_type = null;
 $action = null;
 
 Class Controller {
@@ -18,12 +19,13 @@ Class Controller {
 	private $redirecting = false;
 	
 	public function __construct($controller='', $action=''){
-		global $config, $application_data, $query_string;
+		global $config, $application_data, $query_string, $response_type;
 		
 		$application_data = array();
 		
 		//Set the type of response
-		$this->response_type = getResponseType();
+		$response_type = getResponseType();
+		$this->response_type = $response_type;
 		
 		//Get config options in case they need to be read in controller
 		$this->config = $config;
