@@ -7,7 +7,8 @@ function getResponseType() {
 		$values[(string)$q][] = $value;
 	}
 	krsort($values, SORT_NUMERIC);
-	$value = array_shift(array_slice($values, 0, 1));
+	$values = array_slice($values, 0, 1);
+	$value = array_shift($values);
 
 	switch ($value[0]) {
 		case 'text/html':
