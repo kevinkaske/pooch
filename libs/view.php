@@ -2,7 +2,11 @@
 function renderLayout(){
 	global $controller, $action, $view_layout, $config, $application_data, $view_data, $query_string;
 	if($view_layout != null && $view_layout != 'none'){
-		require(ROOT.'/views/layouts/'.$view_layout.'.php');
+		if($controller->response_type == 'html'){
+			require(ROOT.'/views/layouts/'.$view_layout.'.php');
+		}else{
+			require(ROOT.'/views/layouts/'.$view_layout.'.'.$controller->response_type.'.php');
+		}
 	}else{
 		//The renderView function is normally called from the layout file so we will just call it directly
 		//since we are skipping the layout with this request.
