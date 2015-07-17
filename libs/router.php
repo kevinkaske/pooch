@@ -25,6 +25,8 @@ function getResponseType() {
 
 function routeRequest(){
 	global $config, $application, $controller, $action, $query_string;
+	$query_string = getQueryString();
+	
 	$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 	$urlArray = explode('/', $uri);
