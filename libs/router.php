@@ -68,8 +68,8 @@ function routeRequest(){
 		require(ROOT.'/jobs/'.$action.'.php');
 		$controller_class_name = str_replace(" ", "", ucwords(str_replace("_", " ", $action))).'Job';
 		
-		eval('$application = new '.$controller_class_name.'();');
-		eval('$application->index();');
+		$application = new $controller_class_name();
+		$application->index();
 	//else fall back to regular route
 	}else{
 		require(ROOT.'/controllers/'.$controller.'_controller.php');
@@ -78,8 +78,8 @@ function routeRequest(){
 		$avalible_functions = get_class_methods($controller_class_name);
 	
 		if(in_array($action, $avalible_functions)){
-			eval('$application = new '.$controller_class_name.'("'.$controller.'","'.$action.'");');
-			eval('$application->'.$action.'();');
+			$application = new $controller_class_name();
+			$application->$action();
 		}else{
 			die('404');
 		}
