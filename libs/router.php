@@ -1,32 +1,6 @@
 <?
-function getResponseType() {
-	$values = array();
-	foreach (preg_split('/\s*,\s*/', $_SERVER['HTTP_ACCEPT']) as $qvalue) {
-		@list($value, $q) = preg_split('/\s*;\s*q\s*=\s*/', $qvalue);
-		$q = (is_null($q) || !is_numeric($q)) ? 1.0 : floatval($q);
-		$values[(string)$q][] = $value;
-	}
-	krsort($values, SORT_NUMERIC);
-	$values = array_slice($values, 0, 1);
-	$value = array_shift($values);
-
-	switch ($value[0]) {
-		case 'text/html':
-			return 'html';
-			break;
-		case 'application/xml':
-			return 'xml';
-			break;
-		case 'application/json':
-			return 'json';
-			break;
-	}
-}
-
 function routeRequest(){
 	global $config, $application, $controller, $action, $query_string;
-	$query_string = getQueryString();
-	
 	$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 	$urlArray = explode('/', $uri);
@@ -57,8 +31,16 @@ function routeRequest(){
 			$action     = $config['root_action'];
 		}
 	}else{
-		$controller = $urlArray[1];
-		$action     = $urlArray[2];
+		if(count($urlArray) > 1){
+			$controller = $urlArray[1];
+			if(count($urlArray) > 2){
+				$action     = $urlArray[2];
+			}
+		}else{
+			//Call the root controller and action
+			$controller = $config['root_controller'];
+			$action     = $config['root_action'];
+		}
 	}
 
 	require(ROOT.'/controllers/application_controller.php');
@@ -68,8 +50,8 @@ function routeRequest(){
 		require(ROOT.'/jobs/'.$action.'.php');
 		$controller_class_name = str_replace(" ", "", ucwords(str_replace("_", " ", $action))).'Job';
 		
-		$application = new $controller_class_name($controller, 'index');
-		$application->index();
+		eval('$application = new '.$controller_class_name.'();');
+		eval('$application->index();');
 	//else fall back to regular route
 	}else{
 		require(ROOT.'/controllers/'.$controller.'_controller.php');
@@ -78,8 +60,8 @@ function routeRequest(){
 		$avalible_functions = get_class_methods($controller_class_name);
 	
 		if(in_array($action, $avalible_functions)){
-			$application = new $controller_class_name($controller, $action);
-			$application->$action();
+			eval('$application = new '.$controller_class_name.'("'.$controller.'","'.$action.'");');
+			eval('$application->'.$action.'();');
 		}else{
 			die('404');
 		}
