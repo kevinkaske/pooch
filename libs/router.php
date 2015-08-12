@@ -34,7 +34,7 @@ function routeRequest(){
 		if(count($urlArray) > 1){
 			$controller = $urlArray[1];
 			if(count($urlArray) > 2){
-				$action     = $urlArray[2];
+				$action = $urlArray[2];
 			}
 		}else{
 			//Call the root controller and action
