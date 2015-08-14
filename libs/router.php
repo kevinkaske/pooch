@@ -55,9 +55,9 @@ function routeRequest(){
 			$action     = $config['root_action'];
 		}
 	}else{
-		if(count($urlArray) > 1){
+		if(count($urlArray) > 0){
 			$controller = $urlArray[1];
-			if(count($urlArray) > 2){
+			if(count($urlArray) > 1){
 				$action = $urlArray[2];
 			}
 		}else{
