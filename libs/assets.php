@@ -14,6 +14,14 @@ function cssTags(){
 	return $css_tags;
 }
 
+function cssTagsForDeploy(){
+	global $config, $css_files;
+	foreach($css_files as $css_file) {
+		$css_tags = $css_tags.$css_file.'.css ';
+	}
+	echo $css_tags;
+}
+
 function jsTags(){
 	global $config, $js_files;
 	$js_tags = '';
@@ -27,5 +35,13 @@ function jsTags(){
 	}
 	
 	return $js_tags;
+}
+
+function jsTagsForDeploy(){
+	global $config, $js_files;
+	foreach($js_files as $js_file) {
+		$js_tags = $js_tags.$js_file.'.js ';
+	}
+	echo $js_tags;
 }
 ?>
