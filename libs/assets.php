@@ -1,6 +1,6 @@
 <?
 function cssTags(){
-	global $config, $css_files;
+	global $config, $css_files, $deploy_id;
 	$css_tags = '';
 	
 	if($config['env'] == 'prod'){
@@ -23,7 +23,7 @@ function cssTagsForDeploy(){
 }
 
 function jsTags(){
-	global $config, $js_files;
+	global $config, $js_files, $deploy_id;
 	$js_tags = '';
 	
 	if($config['env'] == 'prod'){
