@@ -38,10 +38,10 @@ function getAddress(){
 }
 
 function getImage($imageName){
-	global $config;
+	global $config, $deploy_id;
 	
 	if($config['env'] == 'prod'){
-		return $config['address'].'/assets/img/'.$imageName.'?'.$config['deploy_id'];
+		return $config['address'].'/assets/img/'.$imageName.'?'.$deploy_id;
 	}else{
 		return $config['address'].'/assets/img/'.$imageName;
 	}
