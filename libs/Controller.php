@@ -31,7 +31,7 @@ Class Controller {
 		$this->config = $config;
 		
 		//Get query string in case they need to be read in controller
-		$this->query_string = $query_string;
+		$this->query_string = getQueryString();
 		
 		//Set what controller and action this is
 		$this->controller = $controller;
