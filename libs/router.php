@@ -29,7 +29,16 @@ function catchCustomRoute(){
 	if(isset($config['routes'])){
 		foreach($config['routes'] as $routeArray) {
 			//If the url ends in the custom path from the routes.php file
-	  	if((substr($_SERVER['REQUEST_URI'], strlen($_SERVER['REQUEST_URI']) - strlen($routeArray[0])) === $routeArray[0]){
+			$controller_indent_directory = '';
+
+			if(isset($config['controller_indent'])
+				&& $config['controller_indent_']
+				&& isset($config['controller_indent_directory'])
+				&& $config['controller_indent_directory'] != ''){
+				$controller_indent_directory = $config['controller_indent_directory'] . '/';
+			}
+			
+	  	if($_SERVER['REQUEST_URI'] == $controller_indent_directory . $routeArray[0]){
 				$controller = $routeArray[1];
 				$action = $routeArray[2];
 				$return = true;
