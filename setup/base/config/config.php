@@ -58,7 +58,13 @@ if($config['env'] == 'prod'){
 //---------------------------------------------
 if($config['env'] == 'dev'){
 	$config['address'] = 'http://localhost/example';
-	$config['controller_indent'] = true;
+	//Set controller_indent to true if this application is not
+	//at the root of the server. Example: if the server address
+	//is http://localhost you would set it to false. If the
+	//address is something like http://localhost/example you
+	//would set it to true.
+	$config['controller_indent'] = false;
+	$config['controller_indent_directory'] = 'example';
 }
 
 //---------------------------------------------
