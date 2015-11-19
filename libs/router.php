@@ -32,7 +32,7 @@ function catchCustomRoute(){
 			$controller_indent_directory = '';
 
 			if(isset($config['controller_indent'])
-				&& $config['controller_indent_']
+				&& $config['controller_indent_'] != ''
 				&& isset($config['controller_indent_directory'])
 				&& $config['controller_indent_directory'] != ''){
 				$controller_indent_directory = $config['controller_indent_directory'] . '/';
