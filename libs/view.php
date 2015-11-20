@@ -27,19 +27,25 @@ function includePartial($partial_path){
 
 function getPath($path){
 	global $config;
-	
-	return $config['address'].$path;
+
+	//If the path needs a slash
+	$slash = '';
+	if(substr($path, 1) != '/' && $config['address'] != '/'){
+		$slash = '/';
+	}
+
+	return $config['address'].$slash.$path;
 }
 
 function getAddress(){
 	global $config;
-	
+
 	return $config['address'];
 }
 
 function getImage($imageName){
 	global $config, $deploy_id;
-	
+
 	if($config['env'] == 'prod'){
 		return $config['address'].'/assets/img/'.$imageName.'?'.$deploy_id;
 	}else{
