@@ -77,10 +77,10 @@ function routeRequest(){
 		//Don't do anything here... Controller and Action set in catchCustomRoute()
 
 	//Else if this does have a controller passed in the url
-	}elseif(count($urlArray) > $indent){
-		$controller = $urlArray[$indent++];
-		if(count($urlArray) > $indent){
-			$action = $urlArray[$indent++];
+	}elseif(count($urlArray) > $indent++){
+		$controller = $urlArray[$indent];
+		if(count($urlArray) > $indent++){
+			$action = $urlArray[$indent];
 		}
 	}else{
 		//Call the root controller and action
