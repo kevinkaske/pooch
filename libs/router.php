@@ -35,10 +35,12 @@ function catchCustomRoute(){
 				&& $config['controller_indent']
 				&& isset($config['controller_indent_directory'])
 				&& $config['controller_indent_directory'] != ''){
-				$controller_indent_directory = $config['controller_indent_directory'] . '/';
+				$controller_indent_directory = $config['controller_indent_directory'];
 			}
 
-	  	if($_SERVER['REQUEST_URI'] == $controller_indent_directory . $routeArray[0]){
+			print($controller_indent_directory . $routeArray[0]);
+
+	  	if($_SERVER['REQUEST_URI'] == '/' . $controller_indent_directory . $routeArray[0]){
 				$controller = $routeArray[1];
 				$action = $routeArray[2];
 				$return = true;
