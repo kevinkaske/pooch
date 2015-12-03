@@ -6,6 +6,7 @@ function renderLayout(){
 			require(ROOT.'/views/layouts/'.$view_layout.'.php');
 		}else{
 			//json and xml don't use layouts
+			renderView();
 		}
 	}else{
 		//The renderView function is normally called from the layout file so we will just call it directly
