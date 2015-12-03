@@ -5,7 +5,7 @@ function renderLayout(){
 		if($response_type == 'html'){
 			require(ROOT.'/views/layouts/'.$view_layout.'.php');
 		}else{
-			require(ROOT.'/views/layouts/'.$view_layout.'.'.$response_type.'.php');
+			//json and xml don't use layouts
 		}
 	}else{
 		//The renderView function is normally called from the layout file so we will just call it directly
@@ -16,8 +16,12 @@ function renderLayout(){
 
 //render view
 function renderView(){
-	global $controller, $action, $config, $application_data, $view_data, $query_string;
-	require(ROOT.'/views/'.$controller.'/'.$action.'.php');
+	global $controller, $action, $config, $application_data, $view_data, $query_string, $response_type;
+	if($response_type == 'html'){
+		require(ROOT.'/views/'.$controller.'/'.$action.'.php');
+	}else{
+		require(ROOT.'/views/layouts/'.$view_layout.'.'.$response_type.'.php');
+	}
 }
 
 function includePartial($partial_path){
