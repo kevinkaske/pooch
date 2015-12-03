@@ -20,7 +20,7 @@ function renderView(){
 	if($response_type == 'html'){
 		require(ROOT.'/views/'.$controller.'/'.$action.'.php');
 	}else{
-		require(ROOT.'/views/layouts/'.$view_layout.'.'.$response_type.'.php');
+		require(ROOT.'/views/'.$controller.'/'.$action.'.'.$response_type.'.php');
 	}
 }
 
