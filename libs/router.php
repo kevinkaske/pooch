@@ -1,7 +1,17 @@
 <?
 function getResponseType() {
 	$values = array();
-	if(isset($_SERVER['HTTP_ACCEPT'])){
+	if(isset($_POST['HTTP_ACCEPT'])){
+		if($_POST['HTTP_ACCEPT'] == 'html'){
+			return 'html';
+		}elseif($_POST['HTTP_ACCEPT'] == 'xml'){
+			return 'xml';
+		}elseif($_POST['HTTP_ACCEPT'] == 'json'){
+			return 'json';
+		}else{
+			return 'html';
+		}
+	}elseif(isset($_SERVER['HTTP_ACCEPT'])){
 		foreach (preg_split('/\s*,\s*/', $_SERVER['HTTP_ACCEPT']) as $qvalue) {
 			@list($value, $q) = preg_split('/\s*;\s*q\s*=\s*/', $qvalue);
 			$q = (is_null($q) || !is_numeric($q)) ? 1.0 : floatval($q);
