@@ -25,6 +25,7 @@ Class Controller {
 
 		//Set the type of response
 		$this->response_type = getResponseType();
+		$response_type = $this->response_type;
 
 		//Set content type header for non-HTML responses
 		if($this->response_type == 'json'){
