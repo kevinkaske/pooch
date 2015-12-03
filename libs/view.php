@@ -5,7 +5,7 @@ function renderLayout(){
 		if($response_type == 'html'){
 			require(ROOT.'/views/layouts/'.$view_layout.'.php');
 		}else{
-			require(ROOT.'/views/layouts/'.$view_layout.'.'.$controller->response_type.'.php');
+			require(ROOT.'/views/layouts/'.$view_layout.'.'.$response_type.'.php');
 		}
 	}else{
 		//The renderView function is normally called from the layout file so we will just call it directly
