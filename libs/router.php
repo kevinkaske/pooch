@@ -1,12 +1,12 @@
 <?
 function getResponseType() {
 	$values = array();
-	if(isset($_POST['HTTP_ACCEPT'])){
-		if($_POST['HTTP_ACCEPT'] == 'html'){
+	if(isset($_POST['response_type'])){
+		if($_POST['response_type'] == 'html'){
 			return 'html';
-		}elseif($_POST['HTTP_ACCEPT'] == 'xml'){
+		}elseif($_POST['response_type'] == 'xml'){
 			return 'xml';
-		}elseif($_POST['HTTP_ACCEPT'] == 'json'){
+		}elseif($_POST['response_type'] == 'json'){
 			return 'json';
 		}else{
 			return 'html';
