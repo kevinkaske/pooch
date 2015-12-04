@@ -23,6 +23,9 @@ Class Controller {
 
 		$application_data = array();
 
+		//Get query string in case they need to be read in controller
+		$this->query_string = getQueryString();
+
 		//Set the type of response
 		$this->response_type = getResponseType();
 		$response_type = $this->response_type;
@@ -36,9 +39,6 @@ Class Controller {
 
 		//Get config options in case they need to be read in controller
 		$this->config = $config;
-
-		//Get query string in case they need to be read in controller
-		$this->query_string = getQueryString();
 
 		//Set what controller and action this is
 		$this->controller = $controller;
