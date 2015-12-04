@@ -1,5 +1,7 @@
 <?
 function getResponseType() {
+	global $query_string;
+
 	$values = array();
 	if(isset($_POST['response_type'])){
 		if($_POST['response_type'] == 'html'){
@@ -7,6 +9,16 @@ function getResponseType() {
 		}elseif($_POST['response_type'] == 'xml'){
 			return 'xml';
 		}elseif($_POST['response_type'] == 'json'){
+			return 'json';
+		}else{
+			return 'html';
+		}
+	}elseif(isset($query_string['response_type'])){
+		if($query_string['response_type'] == 'html'){
+			return 'html';
+		}elseif($query_string['response_type'] == 'xml'){
+			return 'xml';
+		}elseif($query_string['response_type'] == 'json'){
 			return 'json';
 		}else{
 			return 'html';
