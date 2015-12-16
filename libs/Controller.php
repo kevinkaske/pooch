@@ -24,7 +24,7 @@ Class Controller {
 		$application_data = array();
 
 		//Get query string in case they need to be read in controller
-		$this->query_string = getQueryString();
+		$this->query_string = $query_string;
 
 		//Set the type of response
 		$this->response_type = getResponseType();
