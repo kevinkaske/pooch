@@ -5,7 +5,7 @@ A simple lightweight PHP framework. I created Pooch while building [Where I Give
 to make it easy for none profit organizations to receive donations online.
 
 ##About
-Pooch is a simple, small (around 200 lines of code) PHP framework. Pooch is able to stay tiny by being built to use the amazing
+Pooch is a simple, small PHP framework. Pooch is able to stay tiny by being built to use the amazing
 [MysqliDb](https://github.com/joshcam/PHP-MySQLi-Database-Class) database class and built in PHP functionality (for templating).
 This framework focuses on convention over configuration. It abuses global variables as a necessary evil to keep code as light and
 simple as possible. It works great for prototyping small to medium sized web applications and getting your idea into a functioning
