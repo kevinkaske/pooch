@@ -64,7 +64,10 @@ function catchCustomRoute(){
 				$controller_indent_directory = $config['controller_indent_directory'];
 			}
 
-	  	if($_SERVER['REQUEST_URI'] == '/' . $controller_indent_directory . $routeArray[0]){
+			$custom_route = '/' . $controller_indent_directory . $routeArray[0];
+			$custom_route = str_replace("//", "/", $custom_route); //Get rid of extra slash if there is no indent directory
+			
+	  	if($_SERVER['REQUEST_URI'] == $custom_route){
 				$controller = $routeArray[1];
 				$action = $routeArray[2];
 				$return = true;
