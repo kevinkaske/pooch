@@ -68,7 +68,12 @@ function catchCustomRoute(){
 			$custom_route = str_replace("//", "/", $custom_route); //Get rid of extra slash if there is no indent directory
 
 			//get rid of query string to compare requested route to custom routes
-			$requested_route = stristr($_SERVER['REQUEST_URI'], '?', true);
+			$requested_route = $_SERVER['REQUEST_URI'];
+			if(strpos($requested_route, '?')){
+				//Do nothing. This is not a query string url
+			}else{
+				$requested_route = stristr($requested_route, '?', true);
+			}
 
 	  	if($requested_route == $custom_route){
 				$controller = $routeArray[1];
