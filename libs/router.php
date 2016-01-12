@@ -69,7 +69,7 @@ function catchCustomRoute(){
 
 			//get rid of query string to compare requested route to custom routes
 			$requested_route = $_SERVER['REQUEST_URI'];
-			if(strpos($requested_route, '?')){
+			if(strpos($requested_route, '?') === false){
 				//Do nothing. This is not a query string url
 			}else{
 				$requested_route = stristr($requested_route, '?', true);
