@@ -25,16 +25,14 @@ function getResponseType() {
 		}
 	}elseif(isset($_SERVER['HTTP_ACCEPT'])){
 		try {
-			foreach (preg_split('/\s*,\s*/', $_SERVER['HTTP_ACCEPT']) as $qvalue) {
-				@list($value, $q) = preg_split('/\s*;\s*q\s*=\s*/', $qvalue);
-				$q = (is_null($q) || !is_numeric($q)) ? 1.0 : floatval($q);
-				$values[(string)$q][] = $value;
+			$http_accept = $_SERVER['HTTP_ACCEPT'];
+			if(!isset($http_accept)){
+   			$http_accept = 'text/html';
 			}
-			krsort($values, SORT_NUMERIC);
-			$values = array_slice($values, 0, 1);
-			$value = array_shift($values);
 
-			switch ($value[0]) {
+			$http_accept_array = explode(",", $http_accept);
+
+			switch ($http_accept_array[0]) {
 				case 'text/html':
 					return 'html';
 					break;
