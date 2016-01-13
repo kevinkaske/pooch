@@ -24,25 +24,29 @@ function getResponseType() {
 			return 'html';
 		}
 	}elseif(isset($_SERVER['HTTP_ACCEPT'])){
-		foreach (preg_split('/\s*,\s*/', $_SERVER['HTTP_ACCEPT']) as $qvalue) {
-			@list($value, $q) = preg_split('/\s*;\s*q\s*=\s*/', $qvalue);
-			$q = (is_null($q) || !is_numeric($q)) ? 1.0 : floatval($q);
-			$values[(string)$q][] = $value;
-		}
-		krsort($values, SORT_NUMERIC);
-		$values = array_slice($values, 0, 1);
-		$value = array_shift($values);
+		try {
+			foreach (preg_split('/\s*,\s*/', $_SERVER['HTTP_ACCEPT']) as $qvalue) {
+				@list($value, $q) = preg_split('/\s*;\s*q\s*=\s*/', $qvalue);
+				$q = (is_null($q) || !is_numeric($q)) ? 1.0 : floatval($q);
+				$values[(string)$q][] = $value;
+			}
+			krsort($values, SORT_NUMERIC);
+			$values = array_slice($values, 0, 1);
+			$value = array_shift($values);
 
-		switch ($value[0]) {
-			case 'text/html':
-				return 'html';
-				break;
-			case 'application/xml':
-				return 'xml';
-				break;
-			case 'application/json':
-				return 'json';
-				break;
+			switch ($value[0]) {
+				case 'text/html':
+					return 'html';
+					break;
+				case 'application/xml':
+					return 'xml';
+					break;
+				case 'application/json':
+					return 'json';
+					break;
+			}
+		} catch (Exception $e) {
+		    return 'html';
 		}
 	}else{
 		return 'html';
