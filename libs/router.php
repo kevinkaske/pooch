@@ -138,7 +138,13 @@ function routeRequest(){
 		$application->index();
 	//else fall back to regular route
 	}else{
-		require(ROOT.'/controllers/'.$controller.'_controller.php');
+		try{
+			require(ROOT.'/controllers/'.$controller.'_controller.php');
+		}catch (Exception $e){
+			if($env != 'prod'){
+				die('404 (controller not found)');
+			}
+		}
 		$controller_class_name = str_replace(" ", "", ucwords(str_replace("_", " ", $controller))).'Controller';
 
 		$avalible_functions = get_class_methods($controller_class_name);
