@@ -3,7 +3,11 @@ function renderLayout(){
 	global $controller, $action, $view_layout, $config, $application_data, $view_data, $query_string, $response_type;
 	if($view_layout != null && $view_layout != 'none'){
 		if($response_type == 'html'){
-			require(ROOT.'/views/layouts/'.$view_layout.'.php');
+			try{
+				require(ROOT.'/views/layouts/'.$view_layout.'.php');
+			}catch (Exception $e){
+    		//do nothing... Layout was not found.
+			}
 		}else{
 			//json and xml don't use layouts
 			renderView();
@@ -19,9 +23,17 @@ function renderLayout(){
 function renderView(){
 	global $controller, $action, $config, $application_data, $view_data, $query_string, $response_type;
 	if($response_type == 'html'){
-		require(ROOT.'/views/'.$controller.'/'.$action.'.php');
+		try{
+			require(ROOT.'/views/'.$controller.'/'.$action.'.php');
+		}catch (Exception $e){
+			//do nothing... View was not found.
+		}
 	}else{
-		require(ROOT.'/views/'.$controller.'/'.$action.'.'.$response_type.'.php');
+		try{
+			require(ROOT.'/views/'.$controller.'/'.$action.'.'.$response_type.'.php');
+		}catch (Exception $e){
+			//do nothing... View was not found.
+		}
 	}
 }
 
