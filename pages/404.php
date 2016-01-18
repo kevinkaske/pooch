@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang=en>
+<html>
+<head>
 <meta charset=utf-8>
 <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
 <title>Error 404 (Not Found)!!!</title>
@@ -8,53 +9,55 @@
         margin: 0;
         padding: 0
     }
-    html,
-    code {
-        font: 15px/22px arial, sans-serif
-    }
     html {
         background: #fff;
         color: #222;
-        padding: 15px
+        padding: 15px;
+        font: 15px/22px arial, sans-serif;
     }
     body {
         margin: 7% auto 0;
         max-width: 390px;
         min-height: 180px;
-        padding: 30px 0 15px
+        padding: 30px 0 15px;
     }
     * > body {
         background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewBox='0 0 50 62.5' enable-background='new 0 0 50 50' xml:space='preserve'><g><path fill='#000000' d='M43.007,9.225H5.943c-1.859,0-3.37,1.512-3.37,3.371v22.039c0,1.859,1.511,3.371,3.37,3.371h37.064   c1.858,0,3.369-1.512,3.369-3.371V12.596C46.376,10.737,44.865,9.225,43.007,9.225z M5.943,11.473h37.064   c0.621,0,1.124,0.501,1.124,1.123v3.781H4.819v-3.781C4.819,11.976,5.321,11.473,5.943,11.473z M43.007,35.758H5.943   c-0.622,0-1.124-0.5-1.124-1.123V18.623h39.312v16.012C44.131,35.258,43.628,35.758,43.007,35.758z'/><circle fill='#000000' cx='7.909' cy='13.989' r='1.203'/><circle fill='#000000' cx='11.278' cy='13.989' r='1.203'/><circle fill='#000000' cx='14.647' cy='13.989' r='1.203'/><path fill='#000000' d='M24.533,21.12c-1.811,0-3.276,1.386-3.276,3.098v5.507c0,1.709,1.469,3.094,3.276,3.094   s3.274-1.385,3.274-3.094v-5.507C27.812,22.506,26.345,21.12,24.533,21.12z M25.566,29.725c0,0.459-0.475,0.848-1.033,0.848   c-0.556,0-1.026-0.389-1.026-0.848v-5.507c0-0.469,0.459-0.852,1.026-0.852c0.567,0,1.033,0.383,1.033,0.852V29.725z'/><path fill='#000000' d='M19.327,26.08h-2.513l1.439-3.401c0.245-0.57-0.023-1.229-0.594-1.472   c-0.564-0.241-1.229,0.023-1.474,0.594l-2.106,4.961l0,0c-0.015,0.034-0.013,0.079-0.026,0.116   c-0.075,0.256-0.073,0.518,0.023,0.748c0.027,0.066,0.077,0.119,0.116,0.176c0.039,0.062,0.071,0.131,0.123,0.184   c0.094,0.096,0.212,0.176,0.337,0.232c0.009,0.006,0.013,0.012,0.022,0.014l0,0c0.135,0.057,0.283,0.092,0.438,0.092H18.2v3.463   c0,0.619,0.503,1.123,1.125,1.123c0.619,0,1.123-0.504,1.123-1.123v-4.586C20.449,26.583,19.945,26.08,19.327,26.08z'/><path fill='#000000' d='M33.833,26.08h-2.517l1.444-3.401c0.243-0.57-0.023-1.229-0.596-1.472   c-0.564-0.241-1.229,0.023-1.474,0.594l-2.105,4.961l0,0c-0.016,0.034-0.013,0.079-0.024,0.116   c-0.076,0.256-0.074,0.518,0.022,0.748c0.026,0.066,0.076,0.119,0.113,0.176c0.04,0.062,0.072,0.131,0.123,0.184   c0.098,0.096,0.216,0.176,0.341,0.232c0.009,0.006,0.013,0.012,0.021,0.014l0,0c0.136,0.057,0.28,0.092,0.439,0.092h3.089v3.463   c0,0.619,0.501,1.123,1.122,1.123c0.622,0,1.123-0.504,1.123-1.123v-4.586C34.956,26.583,34.455,26.08,33.833,26.08z'/></g></svg>") 100% 5px no-repeat;
-        padding-right: 205px
+        padding-right: 205px;
     }
     p {
         margin: 11px 0 22px;
-        overflow: hidden
+        overflow: hidden;
     }
     ins {
-        color: #777;
-        text-decoration: none
+        color: #999;
+        text-decoration: none;
     }
     a img {
-        border: 0
+        border: 0;
     }
     @media screen and (max-width: 772px) {
         body {
             background: none;
             margin-top: 0;
             max-width: none;
-            padding-right: 0
+            padding-right: 0;
         }
     }
-    #logo {
+    h1 {
         font-weight: bold;
-        margin-left: -5px
-        display: inline-block;
-        height: 54px;
-        width: 150px
+        font-size: 25px;
     }
 </style>
-<span id="logo">Page not found</span>
-</a>
-<p><b>404.</b> <ins>That’s an error.</ins>
-    <p>The requested URL was not found on this server. <ins>Sorry!</ins>
+</head>
+<body>
+  <h1>Page not found</h1>
+  <p>
+    <b>404.</b>
+    <ins>(That’s an error.)</ins>
+  </p>
+  <p>
+    The requested URL was not found on this server. Sorry!
+  </p>
+</body>
+</html>
