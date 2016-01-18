@@ -138,9 +138,9 @@ function routeRequest(){
 		$application->index();
 	//else fall back to regular route
 	}else{
-		try{
+		if (file_exists(ROOT.'/controllers/'.$controller.'_controller.php')) {
 			include(ROOT.'/controllers/'.$controller.'_controller.php');
-		}catch (Exception $e){
+		}else{
 			include(ROOT.$config['404_page']);
 			die('');
 		}
