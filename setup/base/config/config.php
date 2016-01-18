@@ -1,4 +1,6 @@
 <?
+$config = Array();
+
 //---------------------------------------------
 // Job Password (Change to secure your app)
 //---------------------------------------------
@@ -15,6 +17,11 @@ date_default_timezone_set('America/Chicago');
 setlocale(LC_ALL, "en_US.UTF-8");
 
 //---------------------------------------------
+// Environment
+//---------------------------------------------
+$config['env'] = 'dev';
+
+//---------------------------------------------
 // Error Reporting
 //---------------------------------------------
 error_reporting(E_ALL | E_STRICT);
@@ -25,19 +32,16 @@ ini_set("docref_root", "http://www.php.net/");
 ini_set("error_prepend_string", "<div style='color:red; font-family:verdana; border:1px solid red; padding:5px;'>");
 ini_set("error_append_string", "</div>");
 
-
-$config = Array();
+//---------------------------------------------
+// Error Pages (Prod only)
+//---------------------------------------------
+$config['404_page'] = '/vendor/kevinkaske/pooch/pages/404.php';
 
 //---------------------------------------------
 // Root
 //---------------------------------------------
 $config['root_controller'] = 'welcome';
 $config['root_action'] = 'index';
-
-//---------------------------------------------
-// Environment
-//---------------------------------------------
-$config['env'] = 'dev';
 
 //---------------------------------------------
 // Password Options
