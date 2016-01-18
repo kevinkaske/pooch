@@ -4,9 +4,9 @@ function renderLayout(){
 	if($view_layout != null && $view_layout != 'none'){
 		if($response_type == 'html'){
 			try{
-				require(ROOT.'/views/layouts/'.$view_layout.'.php');
+				include(ROOT.'/views/layouts/'.$view_layout.'.php');
 			}catch (Exception $e){
-				require(ROOT.$config['404_page']);
+				include(ROOT.$config['404_page']);
 				die('');
 			}
 		}else{
@@ -25,16 +25,16 @@ function renderView(){
 	global $controller, $action, $config, $application_data, $view_data, $query_string, $response_type;
 	if($response_type == 'html'){
 		try{
-			require(ROOT.'/views/'.$controller.'/'.$action.'.php');
+			include(ROOT.'/views/'.$controller.'/'.$action.'.php');
 		}catch (Exception $e){
-			require(ROOT.$config['404_page']);
+			include(ROOT.$config['404_page']);
 			die('');
 		}
 	}else{
 		try{
-			require(ROOT.'/views/'.$controller.'/'.$action.'.'.$response_type.'.php');
+			include(ROOT.'/views/'.$controller.'/'.$action.'.'.$response_type.'.php');
 		}catch (Exception $e){
-			require(ROOT.$config['404_page']);
+			include(ROOT.$config['404_page']);
 			die('');
 		}
 	}
@@ -42,7 +42,7 @@ function renderView(){
 
 function includePartial($partial_path){
 	global $controller, $action, $config, $application_data, $view_data, $query_string;
-	require(ROOT.'/views/'.$partial_path.'.php');
+	include(ROOT.'/views/'.$partial_path.'.php');
 }
 
 function getPath($path){

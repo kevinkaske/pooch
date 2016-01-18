@@ -139,9 +139,9 @@ function routeRequest(){
 	//else fall back to regular route
 	}else{
 		try{
-			require(ROOT.'/controllers/'.$controller.'_controller.php');
+			include(ROOT.'/controllers/'.$controller.'_controller.php');
 		}catch (Exception $e){
-			require(ROOT.$config['404_page']);
+			include(ROOT.$config['404_page']);
 			die('');
 		}
 		$controller_class_name = str_replace(" ", "", ucwords(str_replace("_", " ", $controller))).'Controller';
@@ -152,7 +152,7 @@ function routeRequest(){
 			$application = new $controller_class_name($controller, $action);
 			$application->$action();
 		}else{
-			require(ROOT.$config['404_page']);
+			include(ROOT.$config['404_page']);
 			die('');
 		}
 	}
