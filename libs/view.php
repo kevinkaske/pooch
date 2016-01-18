@@ -6,6 +6,7 @@ function renderLayout(){
 			try{
 				include(ROOT.'/views/layouts/'.$view_layout.'.php');
 			}catch (Exception $e){
+				http_response_code(404);
 				include(ROOT.$config['404_page']);
 				die('');
 			}
@@ -27,6 +28,7 @@ function renderView(){
 		try{
 			include(ROOT.'/views/'.$controller.'/'.$action.'.php');
 		}catch (Exception $e){
+			http_response_code(404);
 			include(ROOT.$config['404_page']);
 			die('');
 		}
@@ -34,6 +36,7 @@ function renderView(){
 		try{
 			include(ROOT.'/views/'.$controller.'/'.$action.'.'.$response_type.'.php');
 		}catch (Exception $e){
+			http_response_code(404);
 			include(ROOT.$config['404_page']);
 			die('');
 		}

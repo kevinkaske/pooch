@@ -141,6 +141,7 @@ function routeRequest(){
 		if (file_exists(ROOT.'/controllers/'.$controller.'_controller.php')) {
 			include(ROOT.'/controllers/'.$controller.'_controller.php');
 		}else{
+			http_response_code(404);
 			include(ROOT.$config['404_page']);
 			die('');
 		}
@@ -152,6 +153,7 @@ function routeRequest(){
 			$application = new $controller_class_name($controller, $action);
 			$application->$action();
 		}else{
+			http_response_code(404);
 			include(ROOT.$config['404_page']);
 			die('');
 		}
