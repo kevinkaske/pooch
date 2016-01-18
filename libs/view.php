@@ -6,9 +6,8 @@ function renderLayout(){
 			try{
 				require(ROOT.'/views/layouts/'.$view_layout.'.php');
 			}catch (Exception $e){
-				if($env != 'prod'){
-    			die('404 (layout not found)');
-				}
+				require(ROOT.$config['404_page']);
+				die('');
 			}
 		}else{
 			//json and xml don't use layouts
@@ -28,17 +27,15 @@ function renderView(){
 		try{
 			require(ROOT.'/views/'.$controller.'/'.$action.'.php');
 		}catch (Exception $e){
-			if($env != 'prod'){
-				die('404 (view not found)');
-			}
+			require(ROOT.$config['404_page']);
+			die('');
 		}
 	}else{
 		try{
 			require(ROOT.'/views/'.$controller.'/'.$action.'.'.$response_type.'.php');
 		}catch (Exception $e){
-			if($env != 'prod'){
-				die('404 (view not found)');
-			}
+			require(ROOT.$config['404_page']);
+			die('');
 		}
 	}
 }

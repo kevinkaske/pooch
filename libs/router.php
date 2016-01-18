@@ -141,9 +141,8 @@ function routeRequest(){
 		try{
 			require(ROOT.'/controllers/'.$controller.'_controller.php');
 		}catch (Exception $e){
-			if($env != 'prod'){
-				die('404 (controller not found)');
-			}
+			require(ROOT.$config['404_page']);
+			die('');
 		}
 		$controller_class_name = str_replace(" ", "", ucwords(str_replace("_", " ", $controller))).'Controller';
 
@@ -153,7 +152,8 @@ function routeRequest(){
 			$application = new $controller_class_name($controller, $action);
 			$application->$action();
 		}else{
-			die('404');
+			require(ROOT.$config['404_page']);
+			die('');
 		}
 	}
 }
