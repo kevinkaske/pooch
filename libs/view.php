@@ -3,12 +3,8 @@ function renderLayout(){
 	global $controller, $action, $view_layout, $config, $application_data, $view_data, $query_string, $response_type;
 	if($view_layout != null && $view_layout != 'none'){
 		if($response_type == 'html'){
-			try{
+			if (file_exists(ROOT.'/views/layouts/'.$view_layout.'.php')) {
 				include(ROOT.'/views/layouts/'.$view_layout.'.php');
-			}catch (Exception $e){
-				http_response_code(404);
-				include(ROOT.$config['404_page']);
-				die('');
 			}
 		}else{
 			//json and xml don't use layouts
@@ -25,20 +21,12 @@ function renderLayout(){
 function renderView(){
 	global $controller, $action, $config, $application_data, $view_data, $query_string, $response_type;
 	if($response_type == 'html'){
-		try{
+		if (file_exists(ROOT.'/views/'.$controller.'/'.$action.'.php')) {
 			include(ROOT.'/views/'.$controller.'/'.$action.'.php');
-		}catch (Exception $e){
-			http_response_code(404);
-			include(ROOT.$config['404_page']);
-			die('');
 		}
 	}else{
-		try{
+		if (file_exists(ROOT.'/views/'.$controller.'/'.$action.'.'.$response_type.'.php')) {
 			include(ROOT.'/views/'.$controller.'/'.$action.'.'.$response_type.'.php');
-		}catch (Exception $e){
-			http_response_code(404);
-			include(ROOT.$config['404_page']);
-			die('');
 		}
 	}
 }
