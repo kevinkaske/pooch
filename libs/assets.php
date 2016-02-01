@@ -1,8 +1,8 @@
 <?
 function cssTags(){
-	global $config, $css_files, $deploy_id;
+	global $config, $css_files, $css_md5;
 	$css_tags = '';
-	
+
 	if($config['env'] == 'prod'){
 		$css_tags = '<link rel="stylesheet" type="text/css" href="'.$config['address'].'/assets/css/master'.$deploy_id.'.css" media="screen">';
 	}else{
@@ -10,7 +10,7 @@ function cssTags(){
 			$css_tags = $css_tags.'<link rel="stylesheet" type="text/css" href="'.$config['address'].'/assets/css/'.$css_file.'.css" media="screen">'."\n";
 		}
 	}
-	
+
 	return $css_tags;
 }
 
@@ -23,9 +23,9 @@ function cssTagsForDeploy(){
 }
 
 function jsTags(){
-	global $config, $js_files, $deploy_id;
+	global $config, $js_files, $css_md5;
 	$js_tags = '';
-	
+
 	if($config['env'] == 'prod'){
 		$js_tags = '<script type="text/javascript" src="'.$config['address'].'/assets/js/master'.$deploy_id.'.js"></script>';
 	}else{
@@ -33,7 +33,7 @@ function jsTags(){
 			$js_tags = $js_tags.'<script type="text/javascript" src="'.$config['address'].'/assets/js/'.$js_file.'.js"></script>'."\n";
 		}
 	}
-	
+
 	return $js_tags;
 }
 
