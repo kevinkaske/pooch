@@ -1,4 +1,5 @@
 <?php
+print getPurpleColoredString("");
 print getPurpleColoredString("8888888b.                            888     \n");
 print getPurpleColoredString("888   Y88b                           888     \n");
 print getPurpleColoredString("888    888                           888     \n");
@@ -8,7 +9,7 @@ print getPurpleColoredString("888       888  888 888  888 888      888  888\n");
 print getPurpleColoredString("888       Y88..88P Y88..88P Y88b.    888  888\n");
 print getPurpleColoredString("888        \"Y88P\"   \"Y88P\"   \"Y8888P 888  888\n");
 print "\n";
-print getCyanColoredString("Building initial blank project...");
+print getCyanColoredString("Setting up empty project...");
 
 recurse_copy(realpath(__DIR__ . '/base/'),realpath(__DIR__ . '/../../../../'));
 print getCyanColoredString(" Finished!\n\n");
@@ -33,25 +34,25 @@ function getPurpleColoredString($string) {
 function getColoredString($string, $color_code) {
 	$colored_string = "";
 	$colored_string .= "\033[".$color_code."m";
-	
+
 	// Add string and end coloring
 	$colored_string .=  $string . "\033[0m";
-	
+
 	return $colored_string;
 }
 
-function recurse_copy($src,$dst) { 
-	$dir = opendir($src); 
-	@mkdir($dst); 
-	while(false !== ( $file = readdir($dir)) ) { 
-		if (( $file != '.' ) && ( $file != '..' )) { 
-			if ( is_dir($src . '/' . $file) ) { 
-				recurse_copy($src . '/' . $file,$dst . '/' . $file); 
+function recurse_copy($src,$dst) {
+	$dir = opendir($src);
+	@mkdir($dst);
+	while(false !== ( $file = readdir($dir)) ) {
+		if (( $file != '.' ) && ( $file != '..' )) {
+			if ( is_dir($src . '/' . $file) ) {
+				recurse_copy($src . '/' . $file,$dst . '/' . $file);
 			}else{
-				copy($src . '/' . $file,$dst . '/' . $file); 
-			} 
-		} 
-	} 
-	closedir($dir); 
+				copy($src . '/' . $file,$dst . '/' . $file);
+			}
+		}
+	}
+	closedir($dir);
 }
 ?>
