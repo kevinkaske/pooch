@@ -48,6 +48,9 @@ php vendor/kevinkaske/pooch/setup/new_application.php
 ```
 
 ##Getting Started
+###Apache
+A .htaccess file is included by default to route requests through index.php and remove index.php from the URL. If you are using a webserver besides Apache (Nginx for example) you will need to configure it to rewrite the URL and pass the request through index.php.
+
 ###Database Setup
 We are now ready to hook the database up. You can either use a GUI tool like MySQL Workbench or the MySQL CLI. To create a DB named
 "pound" using the CLI type the following:
