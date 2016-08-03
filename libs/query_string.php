@@ -1,6 +1,9 @@
 <?
 //Get query string because $_GET does not work with mod rewrite
 //This code should be rewritten at some point... It's ugly
+//
+//Multiple identical keys cannot be passed into pooch. This is a Limitation of this implimentation.
+//Example: Give the query string "id=2&id=3" the value of $query_string['id'] would be 3.
 function getQueryString(){
 	global $query_string;
 	$query_string = array();
