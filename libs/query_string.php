@@ -15,12 +15,12 @@ function getQueryString(){
 			$query_string = explode('&', $query_string[1]);
 			foreach ($query_string as $value) {
 				$value_array = explode('=', $value);
-				$new_query_string[$value_array[0]] = $value_array[1];
+				$new_query_string[urldecode($value_array[0])] = urldecode($value_array[1]);
 			}
 			$query_string = $new_query_string;
 		}else{
 			$value_array = explode('=', $query_string[1]);
-			$new_query_string[$value_array[0]] = $value_array[1];
+			$new_query_string[urldecode($value_array[0])] = urldecode($value_array[1]);
 		}
 	}
 
