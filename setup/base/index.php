@@ -1,5 +1,7 @@
 <?
 //Application entry point
+ob_start();
+
 define('ROOT', dirname(__FILE__));
 
 include(ROOT.'/lib/autoload.php');
@@ -11,4 +13,5 @@ if($config['env'] == 'dev'){
 }
 
 routeRequest();
+ob_end_flush();
 ?>
