@@ -49,7 +49,7 @@ php vendor/kevinkaske/pooch/setup/new_application.php
 
 ## Getting Started
 ### Servers
-####Built in PHP Server
+#### Built in PHP Server
 A router.php file is included to let you serve your application from PHPs built in server. Simply run the following command
 from the application's root directory:
 ```shell
