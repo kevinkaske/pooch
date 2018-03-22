@@ -48,7 +48,15 @@ php vendor/kevinkaske/pooch/setup/new_application.php
 ```
 
 ## Getting Started
-### Apache
+### Servers
+####Built in PHP Server
+A router.php file is included to let you serve your application from PHPs built in server. Simply run the following command
+from the application's root directory:
+```shell
+php -S localhost:8000 router.php
+```
+
+#### Apache
 A .htaccess file is included by default to route requests through index.php and remove index.php from the URL. If you are using a webserver besides Apache (Nginx for example) you will need to configure it to rewrite the URL and pass the request through index.php.
 
 ### Database Setup
