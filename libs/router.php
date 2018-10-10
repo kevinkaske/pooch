@@ -118,6 +118,10 @@ function routeRequest(){
 	//Else if this does have a controller passed in the url
 	}elseif(count($urlArray) > $indent++){
 		$controller = $urlArray[$indent];
+
+		//change dashes "-" to underscores "_"  since we use underscores for the file names and dashes in the
+		$controller = str_replace("-", "_", $controller)
+
 		if(count($urlArray) > $indent++){
 			$action = $urlArray[$indent];
 		}
