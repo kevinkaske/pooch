@@ -120,7 +120,7 @@ function routeRequest(){
 		$controller = $urlArray[$indent];
 
 		//change dashes "-" to underscores "_"  since we use underscores for the file names and dashes in the
-		$controller = str_replace("-", "_", $controller)
+		$controller = str_replace("-", "_", $controller);
 
 		if(count($urlArray) > $indent++){
 			$action = $urlArray[$indent];
