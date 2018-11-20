@@ -101,5 +101,11 @@ Class Controller {
 
 		$this->application_data = $application_data;
 	}
+
+	public function sendMessageToConsole($object_to_debug){
+		ob_start();
+		var_dump($object_to_debug);
+		error_log(ob_get_clean(), 4);
+	}
 }
 ?>
