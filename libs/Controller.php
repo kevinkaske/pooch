@@ -102,6 +102,7 @@ Class Controller {
 		$this->application_data = $application_data;
 	}
 
+	//Used to send message to built in PHP server. Used for development.
 	public function sendMessageToConsole($object_to_debug){
 		ob_start();
 		var_dump($object_to_debug);
