@@ -24,7 +24,7 @@ function getQueryString(){
 				$new_query_string[urldecode($value_array[0])] = urldecode($value_array[1]);
 			}
 		}
-
+	}
 	$query_string = $new_query_string;
 }
 
