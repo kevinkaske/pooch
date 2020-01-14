@@ -11,7 +11,7 @@
 	"require": {
 		"php": ">=5.5.0",
 		"kevinkaske/flash": "dev-master",
-		"robmorgan/phinx": "*",
+		"cakephp/phinx": "*",
 		"ThingEngineer/PHP-MySQLi-Database-Class": "dev-master"
 	},
 	"autoload": {
