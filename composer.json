@@ -12,7 +12,7 @@
 		"php": ">=5.5.0",
 		"kevinkaske/flash": "dev-master",
 		"robmorgan/phinx": "*",
-		"thingengineer/php-mysqli-database-class": "dev-master"
+		"thingengineer/mysqli-database-class": "dev-master"
 	},
 	"autoload": {
 		"files": [
