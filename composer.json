@@ -12,7 +12,7 @@
 		"php": ">=5.5.0",
 		"kevinkaske/flash": "dev-master",
 		"cakephp/phinx": "*",
-		"ThingEngineer/PHP-MySQLi-Database-Class": "dev-master"
+		"thingengineer/php-mysqli-database-class": "dev-master"
 	},
 	"autoload": {
 		"files": [
