@@ -1,4 +1,4 @@
-<?
+<?php
 function renderLayout(){
 	global $controller, $action, $view_layout, $config, $application_data, $view_data, $query_string, $response_type;
 	if($view_layout != null && $view_layout != 'none'){
