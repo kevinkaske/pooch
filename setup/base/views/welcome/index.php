@@ -1,1 +1,1 @@
-<?=$view_data['greeting'];?> Welcome to Pooch!
+<?php echo$view_data['greeting'];?> Welcome to Pooch!
