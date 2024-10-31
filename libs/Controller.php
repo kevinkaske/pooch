@@ -1,4 +1,4 @@
-<?
+<?php
 //Global version of data to use in "view"
 $view_data = null;
 $view_layout = null;
