@@ -3,12 +3,12 @@
 <head>
 	<title>Welcome to Pooch</title>
 	<!-- App JS -->
-	<?= jsTags(); ?>
+	<?php echo jsTags(); ?>
 		
 	<!-- App CSS -->
-	<?= cssTags();?>
+	<?php echo cssTags();?>
 </head>
 <body>
-	<? renderView(); ?>
+	<?php echo renderView(); ?>
 </body>
 </html>
