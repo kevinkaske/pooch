@@ -1,4 +1,4 @@
-<?
+<?php
 /*
 Routes are by default implied. For example http://example.com/accounts/ will route to the index function in the
 AccountsController. You only need to enter exceptions in this file. For example you could make
