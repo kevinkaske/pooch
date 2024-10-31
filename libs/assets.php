@@ -1,4 +1,4 @@
-<?
+<?php
 function cssTags(){
 	global $config, $css_files, $css_md5;
 	$css_tags = '';
