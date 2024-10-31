@@ -1,4 +1,4 @@
-<?
+<?php
 //Get query string because $_GET does not work with mod rewrite
 //This code should be rewritten at some point... It's ugly
 //
