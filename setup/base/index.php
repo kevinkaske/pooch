@@ -1,4 +1,4 @@
-<?
+<?php
 //Application entry point
 ob_start();
 
