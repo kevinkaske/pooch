@@ -1,4 +1,4 @@
-<?
+<?php
 function getResponseType() {
 	global $query_string;
 
