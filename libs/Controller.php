@@ -80,7 +80,7 @@ Class Controller {
 
 		renderLayout();
 		//Get rid of any flash messages
-		unsetFlash();
+		//unsetFlash();
 	}
 
 	public function redirect($url){
