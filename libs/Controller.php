@@ -81,7 +81,7 @@ Class Controller {
 		renderLayout();
 		//Get rid of any flash messages
 		if($this->redirecting != true){
-			unsetFlash()
+			unsetFlash();
 		}
 	}
 
