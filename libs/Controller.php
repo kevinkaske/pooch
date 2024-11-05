@@ -18,7 +18,7 @@ Class Controller {
 	public $values;
 	private $redirecting = false;
 
-	public function __construct($controller='', $action=''){
+	public function __construct($controller='', $action='', $id=''){
 		global $config, $application_data, $query_string, $response_type;
 
 		$application_data = array();
