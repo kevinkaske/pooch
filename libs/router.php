@@ -159,7 +159,7 @@ function routeRequest(){
 		$avalible_functions = get_class_methods($controller_class_name);
 
 		if(in_array($action, $avalible_functions)){
-			$application = new $controller_class_name($controller, $action);
+			$application = new $controller_class_name($controller, $action, $id);
 			$application->$action();
 		}else{
 			http_response_code(404);
