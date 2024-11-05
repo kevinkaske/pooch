@@ -12,6 +12,7 @@ Class Controller {
 	public $layout;
 	public $controller;
 	public $action;
+	public $id;
 	public $query_string;
 	public $application_data;
 	public $response_type;
@@ -43,6 +44,7 @@ Class Controller {
 		//Set what controller and action this is
 		$this->controller = $controller;
 		$this->action = $action;
+		$this->id = $id;
 
 		//validate job key
 		if($controller == 'jobs'){
