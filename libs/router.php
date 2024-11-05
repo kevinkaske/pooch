@@ -88,7 +88,7 @@ function catchCustomRoute(){
 }
 
 function routeRequest(){
-	global $config, $application, $controller, $action, $query_string;
+	global $config, $application, $controller, $action, $id, $query_string;
 	$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 	$urlArray = explode('/', $uri);
@@ -98,7 +98,8 @@ function routeRequest(){
 	$a = count($urlArray);
 
 	$controller = '';
-	$action = 'index';
+	$action     = 'index';
+	$id         = '';
 
 	//setup root based on config
 	$config['root'] = $config['root_controller'];
@@ -124,6 +125,10 @@ function routeRequest(){
 
 		if(count($urlArray) > $indent++){
 			$action = $urlArray[$indent];
+		}
+
+		if(count($urlArray) > $indent++){
+			$id = $urlArray[$indent];
 		}
 	}else{
 		//Call the root controller and action
