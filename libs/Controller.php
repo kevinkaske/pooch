@@ -5,6 +5,7 @@ $view_layout = null;
 $controller = null;
 $response_type = null;
 $action = null;
+$id = null;
 
 Class Controller {
 	public $config;
