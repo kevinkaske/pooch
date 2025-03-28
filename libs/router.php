@@ -66,8 +66,8 @@ function catchCustomRoute(){
 				$controller_indent_directory = $config['controller_indent_directory'];
 			}
 
-			$custom_route = '/' . $controller_indent_directory . $routeArray[0];
-			$custom_route = str_replace("//", "/", $custom_route); //Get rid of extra slash if there is no indent directory
+			$custom_route = DIRECTORY_SEPARATOR . $controller_indent_directory . $routeArray[0];
+			$custom_route = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $custom_route); //Get rid of extra slash if there is no indent directory
 
 			//get rid of query string to compare requested route to custom routes
 			$requested_route = $_SERVER['REQUEST_URI'];
@@ -91,7 +91,7 @@ function routeRequest(){
 	global $config, $application, $controller, $action, $id, $query_string;
 	$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-	$urlArray = explode('/', $uri);
+	$urlArray = explode(DIRECTORY_SEPARATOR, $uri);
 	//remove empty elemnts
 	$urlArray = array_filter($urlArray);
 
@@ -104,7 +104,7 @@ function routeRequest(){
 	//setup root based on config
 	$config['root'] = $config['root_controller'];
 	if($config['root_action'] != 'index'){
-		$config['root'] = $config['root'].'/'.$config['root_controller'];
+		$config['root'] = $config['root'].DIRECTORY_SEPARATOR.$config['root_controller'];
 	}
 
 	$indent = 0;
@@ -136,19 +136,19 @@ function routeRequest(){
 		$action     = $config['root_action'];
 	}
 
-	require(ROOT.'/controllers/application_controller.php');
+	require(ROOT.DIRECTORY_SEPARATOR.'controllers'.DIRECTORY_SEPARATOR.'application_controller.php');
 
 	//special purpose routing (jobs)
 	if($controller == 'jobs'){
-		require(ROOT.'/jobs/'.$action.'.php');
+		require(ROOT.DIRECTORY_SEPARATOR.'jobs'.DIRECTORY_SEPARATOR.$action.'.php');
 		$controller_class_name = str_replace(" ", "", ucwords(str_replace("_", " ", $action))).'Job';
 
 		$application = new $controller_class_name($controller, 'index');
 		$application->index();
 	//else fall back to regular route
 	}else{
-		if (file_exists(ROOT.'/controllers/'.$controller.'_controller.php')) {
-			include(ROOT.'/controllers/'.$controller.'_controller.php');
+		if (file_exists(ROOT.DIRECTORY_SEPARATOR'controllers'.DIRECTORY_SEPARATOR.$controller.'_controller.php')) {
+			include(ROOT.DIRECTORY_SEPARATOR.'controllers'.DIRECTORY_SEPARATOR.$controller.'_controller.php');
 		}else{
 			http_response_code(404);
 			include(ROOT.$config['404_page']);
