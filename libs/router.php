@@ -91,7 +91,7 @@ function routeRequest(){
 	global $config, $application, $controller, $action, $id, $query_string;
 	$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-	$urlArray = explode(DIRECTORY_SEPARATOR, $uri);
+	$urlArray = explode('/', $uri);
 	//remove empty elemnts
 	$urlArray = array_filter($urlArray);
 
@@ -119,7 +119,7 @@ function routeRequest(){
 	//Else if this does have a controller passed in the url
 	}elseif(count($urlArray) > $indent++){
 		$controller = $urlArray[$indent];
-
+        
 		//change dashes "-" to underscores "_"  since we use underscores for the file names and dashes in the
 		$controller = str_replace("-", "_", $controller);
 
