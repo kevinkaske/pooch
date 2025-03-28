@@ -147,7 +147,7 @@ function routeRequest(){
 		$application->index();
 	//else fall back to regular route
 	}else{
-		if (file_exists(ROOT.DIRECTORY_SEPARATOR'controllers'.DIRECTORY_SEPARATOR.$controller.'_controller.php')) {
+		if (file_exists(ROOT.DIRECTORY_SEPARATOR.'controllers'.DIRECTORY_SEPARATOR.$controller.'_controller.php')) {
 			include(ROOT.DIRECTORY_SEPARATOR.'controllers'.DIRECTORY_SEPARATOR.$controller.'_controller.php');
 		}else{
 			http_response_code(404);
