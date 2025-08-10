@@ -88,6 +88,7 @@ function catchCustomRoute(){
 }
 
 function routeRequest(){
+	preflightCheck();
 	global $config, $application, $controller, $action, $id, $query_string;
 	$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -166,6 +167,14 @@ function routeRequest(){
 			include(ROOT.$config['404_page']);
 			die('');
 		}
+	}
+}
+
+//TODO: Move this to it's ownlibrary
+function preflightCheck(){
+	//check to make sure short tags are enabled
+	if (!ini_get('short_open_tag')) {
+    	end("Short tags are not enabled.");
 	}
 }
 ?>
